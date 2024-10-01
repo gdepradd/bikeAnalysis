@@ -275,5 +275,6 @@ elif option == "Rentaler Type":
             plt.show()
             st.pyplot(plt)
 
-
+if name == "main":
+    pass
 

@@ -1,4 +1,4 @@
-#BIKE RENTAL ANALYSIS
+# BIKE RENTAL ANALYSIS
 Welcome to my analysis. This Analysis about bicycle rental in a country in 2011 and 2012. This project have 2 main data. 
 You can see the process Analysis in Notebook.ipynb and dashboard in app.py.
 

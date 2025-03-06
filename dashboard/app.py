@@ -281,29 +281,29 @@ elif option == "Rentaler Segmentation":
     "Frequency": [2272.25, 5827.65, 3378.30, 5506.16],
     "Monetary": [2272.25, 5827.65, 3378.30, 5506.16]
 }
-df = pd.DataFrame(data)
+    df = pd.DataFrame(data)
 
-# Streamlit UI
-st.title("Rentaler Segmentation")
+    # Streamlit UI
+    st.title("Rentaler Segmentation")
 
-# Tampilkan tabel hasil analisis
-st.subheader("RFM Summary")
-st.dataframe(df)
+    # Tampilkan tabel hasil analisis
+    st.subheader("RFM Summary")
+    st.dataframe(df)
 
 
-# Tambahkan visualisasi (opsional)
-st.subheader("Visualisasi Data")
-st.bar_chart(df.set_index("Segment"))
+    # Tambahkan visualisasi (opsional)
+    st.subheader("Visualisasi Data")
+    st.bar_chart(df.set_index("Segment"))
 
-# Kesimpulan
-st.subheader("Kesimpulan dan Saran Bisnis")
-kesimpulan = """
-Berdasarkan analisis RFM, pelanggan dalam kategori **Lost Customers** memiliki recency tertinggi,
-sedangkan **Loyal Customers** menunjukkan frekuensi dan monetary tertinggi. 
-Untuk meningkatkan retensi, berikan insentif kepada pelanggan potensial 
-dan strategi reaktivasi kepada pelanggan yang hilang.
-"""
-st.write(kesimpulan)
+    # Kesimpulan
+    st.subheader("Kesimpulan dan Saran Bisnis")
+    kesimpulan = """
+    Berdasarkan analisis RFM, pelanggan dalam kategori **Lost Customers** memiliki recency tertinggi,
+    sedangkan **Loyal Customers** menunjukkan frekuensi dan monetary tertinggi. 
+    Untuk meningkatkan retensi, berikan insentif kepada pelanggan potensial 
+    dan strategi reaktivasi kepada pelanggan yang hilang.
+    """
+    st.write(kesimpulan)
  
 
 if __name__ == "__main__":

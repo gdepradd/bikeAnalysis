@@ -139,7 +139,7 @@ st.title("Bike Rental Analysis Dashboard")
 # Sidebar options for major sections
 option = st.sidebar.selectbox(
     "Choose Analysis Type",
-    ("Seasonal Analysis", "Hourly Analysis", "Monthly Analysis", "Rentaler Type")
+    ("Seasonal Analysis", "Hourly Analysis", "Monthly Analysis", "Rentaler Type", "Rentaler Segmentation")
 )
 
 # Seasonal Analysis
@@ -274,6 +274,37 @@ elif option == "Rentaler Type":
             plt.legend()  
             plt.show()
             st.pyplot(plt)
+elif option == "Rentaler Segmentation":
+    data = {
+    "Segment": ["Lost Customers", "Loyal Customers", "Others", "Potential Loyalists"],
+    "Recency": [574.17, 102.72, 356.43, 235.44],
+    "Frequency": [2272.25, 5827.65, 3378.30, 5506.16],
+    "Monetary": [2272.25, 5827.65, 3378.30, 5506.16]
+}
+df = pd.DataFrame(data)
+
+# Streamlit UI
+st.title("Rentaler Segmentation")
+
+# Tampilkan tabel hasil analisis
+st.subheader("RFM Summary")
+st.dataframe(df)
+
+
+# Tambahkan visualisasi (opsional)
+st.subheader("Visualisasi Data")
+st.bar_chart(df.set_index("Segment"))
+
+# Kesimpulan
+st.subheader("Kesimpulan dan Saran Bisnis")
+kesimpulan = """
+Berdasarkan analisis RFM, pelanggan dalam kategori **Lost Customers** memiliki recency tertinggi,
+sedangkan **Loyal Customers** menunjukkan frekuensi dan monetary tertinggi. 
+Untuk meningkatkan retensi, berikan insentif kepada pelanggan potensial 
+dan strategi reaktivasi kepada pelanggan yang hilang.
+"""
+st.write(kesimpulan)
+ 
 
 if __name__ == "__main__":
     pass
